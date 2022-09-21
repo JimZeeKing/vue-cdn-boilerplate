@@ -11,17 +11,29 @@
   </head>
   <body>
     <!-- conteneur qui recevra l'application Vue -->
-    <div id="app">{{message}}</div>
-    <script>
-      //les données utilisées par l'application vue qui sera générée
-      const appData = {
-        data() {
-          return {
-            message: "Ceci est un titre",
-          };
-        },
-      };
-
+    <div id="app">
+      <h1>{{message}} <em>(v-model)</em></h1>
+      <input type="number" v-model="number" />
+      <h2><em>Computed values</em> en temps réel</h2>
+      <ul>
+        <li>{{number}} + {{number}} = {{addSelf}}</li>
+        <li>{{number}}² = {{pow2}}</li>
+        <li>√{{number}} = {{sqrt}}</li>
+        <li>{{number}} est pair? = {{odd}}</li>
+      </ul>
+      <h1>{{message}} <em>(v-model)</em></h1>
+      <input type="text" v-model="string" />
+      <h2><em>Computed values</em> en temps réel</h2>
+      <ul>
+        <li>{{string}}.length = {{strlen}}</li>
+        <li>Mots dans {{string}} = {{wordCount}}</li>
+        <li>{{string}} en majuscule = {{upper}}</li>
+        <li>{{string}} mélangé = {{charivari}}</li>
+      </ul>
+    </div>
+    <script type="module">
+      //importer les données de l'application a créer
+      import appData from "./scripts/app.js";
       //on créé l'application dans le contenur spécifié
       Vue.createApp(appData).mount("#app");
     </script>
