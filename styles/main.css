@@ -1,0 +1,16 @@
+:root {
+  --primary: #efeeea;
+  --dark: #23362b;
+  --info: #9bc7c5;
+  --warning: #fed45b;
+  --danger: #e86a58;
+  --success: #1bb28c;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+
+  background-color: var(--primary);
+}
